@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+// import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import Layout from '../components/Layout';
 import AnimalComponent from '../components/Animal';
@@ -23,22 +23,22 @@ Page.propTypes = {
 
 export default Page;
 
-export const query = graphql`
-  query($slug: String!) {
-    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
-      id
-      html
-      frontmatter {
-        category
-        excerpt
-        slug
-        title
-        image {
-          childImageSharp {
-            gatsbyImageData
-          }
-        }
-      }
-    }
-  }
-`;
+// export const query = graphql`
+//   query($slug: String!) {
+//     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
+//       id
+//       html
+//       frontmatter {
+//         category
+//         excerpt
+//         slug
+//         title
+//         image {
+//           childImageSharp {
+//             gatsbyImageData
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;
