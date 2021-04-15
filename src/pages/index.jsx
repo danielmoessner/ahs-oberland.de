@@ -38,15 +38,15 @@ function Page({ data }) {
               Bei Fragen können Sie uns hier erreichen: <br />
               <a
                 className="text-blue-800 hover:text-blue-900 hover:underline my-1 block"
-                href="tel:telefon"
+                href="tel:03665138090"
               >
-                telefon
+                036 6513 8090 
               </a>
               <a
                 className="text-blue-800 hover:text-blue-900 hover:underline my-1 block"
-                href="mailto:email"
+                href="mailto:info@ahs-oberland.de"
               >
-                email
+                info@ahs-oberland.de
               </a>
             </p>
           </div>
