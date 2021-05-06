@@ -7,3 +7,7 @@
 .transition-animate {
   display: block !important;
 }
+
+body {
+  @apply bg-gray-100;
+}

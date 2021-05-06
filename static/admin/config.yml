@@ -24,6 +24,9 @@ public_folder: ../media
 
 # See https://www.netlifycms.org/docs/collection-types/
 collections:
+###
+# PAGES
+###
   - name: page
     label: Seiten
     label_singular: Seite
@@ -45,6 +48,11 @@ collections:
               - label: Beschreibung
                 name: description
                 widget: text
+              - { label: Bild, name: image, widget: image }
+          - label: Header
+            name: header
+            widget: object
+            fields:
               - { label: Bild, name: image, widget: image }
 
   - name: animal
