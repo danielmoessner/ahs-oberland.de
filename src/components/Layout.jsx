@@ -26,7 +26,7 @@ function Layout({ children }) {
     { name: 'Aktuelles', to: '/' },
     { name: 'Marken', to: '/' },
     { name: 'Gebrauchtwagen', to: '/' },
-    { name: 'Kontakt', to: '/' },
+    { name: 'Kontakt', to: '/kontakt/' },
   ];
 
   const footer = {
@@ -135,9 +135,9 @@ function Layout({ children }) {
                       >
                         <div className="flex items-center flex-1">
                           <div className="flex items-center justify-between w-full md:w-auto">
-                            <Link to="/">
+                            <Link className="block py-1 z-50" to="/">
                               <GatsbyImage
-                                className="w-40 h-auto"
+                                className="w-36 h-auto"
                                 alt="AHS Oberland GmbH"
                                 image={global.logo.childImageSharp.gatsbyImageData}
                               />

@@ -12,7 +12,7 @@ import Heading from '../components/Heading';
 
 function Page({ data }) {
   const page = data.pagesYaml;
-  // const global = data.settingsYaml;
+  const global = data.settingsYaml;
 
   const posts = [
     {
@@ -74,22 +74,22 @@ function Page({ data }) {
   const logos = [
     {
       name: 'Audi',
-      url:
+      imageUrl:
         'https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Audi-Logo_2016.svg/800px-Audi-Logo_2016.svg.png',
     },
     {
       name: 'VW',
-      url:
+      imageUrl:
         'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Volkswagen_logo_2019.svg/2000px-Volkswagen_logo_2019.svg.png',
     },
     {
       name: 'Porsche',
-      url:
+      imageUrl:
         'https://upload.wikimedia.org/wikipedia/de/thumb/7/70/Porsche_Logo.svg/2000px-Porsche_Logo.svg.png',
     },
     {
       name: 'Seat',
-      url:
+      imageUrl:
         'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/SEAT_Logo_from_2017.svg/967px-SEAT_Logo_from_2017.svg.png',
     },
   ];
@@ -131,11 +131,22 @@ function Page({ data }) {
       <section>
         <Container>
           <div className="bg-white border-b border-gray-100">
-            <div className="relative">
+            <div className="relative overflow-hidden">
               <GatsbyImage
+                className="filter brightness-150 contrast-50 blur-sm"
                 image={page.header.image.childImageSharp.gatsbyImageData}
                 alt="Header Bild"
               />
+              <div className="bg-white inset-0 bg-opacity-40 absolute" />
+              <div className="absolute inset-0 flex justify-center items-center">
+                <div className="w-96 h-auto">
+                  <GatsbyImage
+                    className="block"
+                    image={global.logo.childImageSharp.gatsbyImageData}
+                    alt="Logo"
+                  />
+                </div>
+              </div>
               <div className="absolute px-8 pb-6 pt-8 bg-white top-16 left-20 bg-opacity-80 md:max-w-2xl">
                 <Heading>Der neue Audi bei uns im Angebot</Heading>
                 <p className="mt-3 mx-auto text-lg text-gray-600 sm:text-xl md:mt-5">
@@ -262,7 +273,7 @@ function Page({ data }) {
                         key={logo.name}
                         className="col-span-1 flex justify-center py-8 px-8 bg-gray-50"
                       >
-                        <img className="max-h-12" src={logo.url} alt={logo.name} />
+                        <img className="max-h-12" src={logo.imageUrl} alt={logo.name} />
                       </div>
                     ))}
                   </div>
