@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import Container from '../components/Container';
 import Seo from '../components/Seo';
 
-export default function error() {
+export default function Page() {
   return (
     <div className="min-w-full min-h-screen bg-white">
       <Container>

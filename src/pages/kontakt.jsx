@@ -3,42 +3,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 // import { Transition } from '@headlessui/react';
-import { GatsbyImage } from 'gatsby-plugin-image';
+// import { GatsbyImage } from 'gatsby-plugin-image';
 import { MailIcon, PhoneIcon } from '@heroicons/react/outline';
 import Container from '../components/Container';
 import Layout from '../components/Layout';
 import Seo from '../components/Seo';
-import Heading from '../components/Heading';
+// import Heading from '../components/Heading';
+import Header from '../components/Header';
 
 function Page({ data }) {
-  const page = data.pagesYaml;
+  const page = data.pageYaml;
 
   return (
     <Layout>
-      <Seo
-        title={page.meta.title}
-        description={page.meta.description}
-        image={page.meta.image.childImageSharp.resize.src}
-      />
-      <section>
-        <Container>
-          <div className="bg-white border-b border-gray-100">
-            <div className="relative overflow-hidden">
-              <GatsbyImage
-                image={page.header.image.childImageSharp.gatsbyImageData}
-                alt="Header Bild"
-              />
-              <div className="absolute px-8 pb-6 pt-8 bg-white top-16 left-20 bg-opacity-80 md:max-w-2xl">
-                <Heading>Kontakt</Heading>
-                <p className="mt-3 mx-auto text-lg text-gray-600 sm:text-xl md:mt-5">
-                  Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat
-                  commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.
-                </p>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
+      <Seo meta={page.meta} />
+      <Header header={page.header} />
       <section>
         <Container>
           <div className="bg-white">
@@ -123,15 +102,9 @@ export default Page;
 
 export const query = graphql`
   {
-    pagesYaml(slug: { eq: "contact" }) {
+    pageYaml(slug: { eq: "contact" }) {
       ...meta
-      header {
-        image {
-          childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
-          }
-        }
-      }
+      ...header
     }
   }
 `;

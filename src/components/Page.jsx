@@ -4,11 +4,11 @@
 // import { graphql } from 'gatsby';
 // // import { Transition } from '@headlessui/react';
 // // import Container from '../components/Container';
-// import Layout from './Layout';
-// import Seo from './Seo';
+// import Layout from '../components/Layout';
+// import Seo from '../components/Seo';
 
 // function Page({ data }) {
-//   const page = data.pagesYaml;
+//   const page = data.pageYaml;
 //   return (
 //     <Layout>
 //       <Seo
@@ -32,7 +32,7 @@
 
 // export const query = graphql`
 //   {
-//     pagesYaml(slug: { eq: "styleguide" }) {
+//     pageYaml(slug: { eq: "styleguide" }) {
 //       ...meta
 //     }
 //   }

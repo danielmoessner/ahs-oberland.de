@@ -23,7 +23,7 @@ function Layout({ children }) {
 
   const navigation = [
     { name: 'Über uns', to: '/' },
-    { name: 'Aktuelles', to: '/' },
+    { name: 'Aktuelles', to: '/aktuelles/' },
     { name: 'Marken', to: '/' },
     { name: 'Gebrauchtwagen', to: '/' },
     { name: 'Kontakt', to: '/kontakt/' },

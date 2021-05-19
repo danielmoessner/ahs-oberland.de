@@ -15,7 +15,7 @@
     "cms": "npx netlify-cms-proxy-server",
     "combine": "combine-yaml -i static/admin/base.yml static/admin/collections/*.yml -o static/admin/config.yml",
     "update": "npx npm-check-updates -u && npm install",
-    "format": "eslint --fix \"{gatsby-*.js,src/**/*.js}\"",
+    "format": "eslint --fix --ext .js,.jsx src/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

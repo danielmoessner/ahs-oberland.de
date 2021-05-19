@@ -1,0 +1,11 @@
+collection: page
+slug: home
+meta:
+  description: Webseite im Aufbau...
+  title: AHS Oberland GmbH
+  image: ""
+header:
+  image: ../media/test.png
+  title: Der neue Audi bei uns im Angebot
+  text: Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem
+    cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.

@@ -5,6 +5,7 @@ const GatsbyImageData = PropTypes.shape({
   placeholder: PropTypes.shape({
     fallback: PropTypes.string.isRequired,
   }),
+  backgroundColor: PropTypes.string,
   images: PropTypes.shape({
     fallback: PropTypes.shape({
       src: PropTypes.string.isRequired,

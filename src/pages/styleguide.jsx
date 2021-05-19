@@ -12,7 +12,7 @@ import DynamicForm from '../components/DynamicForm';
 import Container from '../components/Container';
 
 function Page({ data }) {
-  const page = data.pagesYaml;
+  const page = data.pageYaml;
 
   const headingText = 'Lorem ipsum dolor sit';
 
@@ -61,11 +61,7 @@ function Page({ data }) {
 
   return (
     <Layout>
-      <Seo
-        title={page.meta.title}
-        description={page.meta.description}
-        image={page.meta.image.childImageSharp.resize.src}
-      />
+      <Seo meta={page.meta} />
       <section>
         <Container>
           <div className="bg-white py-32 px-8">
@@ -166,18 +162,8 @@ export default Page;
 
 export const query = graphql`
   {
-    pagesYaml(slug: { eq: "styleguide" }) {
-      meta {
-        image {
-          childImageSharp {
-            resize(width: 1200) {
-              src
-            }
-          }
-        }
-        description
-        title
-      }
+    pageYaml(slug: { eq: "styleguide" }) {
+      ...meta
     }
   }
 `;
