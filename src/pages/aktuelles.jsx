@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 // import { Transition } from '@headlessui/react';
 import Layout from '../components/Layout';
 import Seo from '../components/Seo';
