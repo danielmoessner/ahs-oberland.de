@@ -4,10 +4,14 @@ import Container from '../components/Container';
 import Seo from '../components/Seo';
 
 export default function Page() {
+  const meta = {
+    title: '404',
+    description: '404 Error',
+  };
   return (
     <div className="min-w-full min-h-screen bg-white">
       <Container>
-        <Seo title="404" description="404 Error" />
+        <Seo meta={meta} />
         <div className="flex items-center justify-center w-full min-h-screen">
           <div className="flex flex-col w-full max-w-sm">
             <h1 className="text-4xl text-gray-800 font-bold mb-3">404 Error</h1>
