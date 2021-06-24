@@ -69,6 +69,9 @@ export const articleFragment = graphql`
       image {
         childImageSharp {
           gatsbyImageData
+          resize(width: 1200) {
+            src
+          }
         }
       }
     }

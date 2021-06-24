@@ -1,0 +1,28 @@
+collection: setting
+slug: footer
+copyright: © AHS Oberland GmbH
+columns:
+  - class: col-span-6 md:col-span-3
+    title: Navigation
+    content:
+      - type: link
+        text: Startseite
+        url: /
+  - class: col-span-6 md:col-span-3
+    title: Kontakt
+    content:
+      - type: externalLink
+        text: +49(0)36651 380 90
+        url: tel:+49(0)3665138090
+      - type: externalLink
+        text: info@ahs-oberland.de
+        url: mailto:info@ahs-oberland.de
+  - class: col-span-6 md:col-span-3
+    title: Rechtliches
+    content:
+      - type: link
+        text: Impressum
+        url: /rechtliches/impressum/
+      - type: link
+        text: Datenschutz
+        url: /rechtliches/datenschutz/

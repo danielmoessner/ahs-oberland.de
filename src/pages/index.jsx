@@ -3,7 +3,7 @@ import { graphql, Link } from 'gatsby';
 // import { GatsbyImage } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import { CheckIcon } from '@heroicons/react/outline';
+import { CheckIcon, MailIcon, PhoneIcon } from '@heroicons/react/outline';
 import Container from '../components/Container';
 import Layout from '../components/Layout';
 // import AnimalCard from '../components/AnimalCard';
@@ -89,10 +89,9 @@ function Page({ data }) {
               </div>
             </div>
             <div className="absolute px-8 pb-6 pt-8 bg-white top-16 left-20 bg-opacity-80 md:max-w-2xl">
-              <Heading>Der neue Audi bei uns im Angebot</Heading>
+              <Heading>{page.header.title}</Heading>
               <p className="mt-3 mx-auto text-lg text-gray-600 sm:text-xl md:mt-5">
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat
-                commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.
+                {page.header.text}
               </p>
               <div className="mt-4">
                 <Link to="/" className="text-base font-medium text-rose-500">
@@ -103,6 +102,89 @@ function Page({ data }) {
           </div>
         </Container>
       </section>
+
+      <Section>
+        <div className="lg:grid lg:grid-cols-2 lg:gap-8">
+          <div>
+            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Kontaktdaten</h2>
+            <div className="mt-10">
+              <div className="mt-3">
+                <p className="text-lg text-gray-500">
+                  Weiterhin sind wir wie gewohnt für Sie da. <br />
+                  Sie erreichen uns unter folgenden Kontaktdaten:
+                </p>
+              </div>
+              <div className="mt-9">
+                <div className="flex items-center">
+                  <div className="flex-shrink-0">
+                    <PhoneIcon className="h-6 w-6 text-gray-800" aria-hidden="true" />
+                  </div>
+                  <div className="ml-3 text-lg font-medium text-gray-900">
+                    <a href="tel:+49(0)36651 380 90" rel="noreferrer">
+                      +49(0)36651 380 90
+                    </a>
+                  </div>
+                </div>
+                <div className="mt-6 flex items-center">
+                  <div className="flex-shrink-0">
+                    <MailIcon className="h-6 w-6 text-gray-800" aria-hidden="true" />
+                  </div>
+                  <div className="ml-3 text-lg font-medium text-gray-900">
+                    <a target="_blank" href="mailto:info@ahs-oberland.de" rel="noreferrer">
+                      info@ahs-oberland.de
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Öffnungszeiten</h2>
+            <div className="mt-10">
+              <div className="max-w-lg mx-auto lg:max-w-none">
+                <dl className="sm:divide-y sm:divide-gray-200">
+                  <div className="py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt className="md:text-lg text-gray-900 font-medium">Montag</dt>
+                    <dd className="mt-1 md:text-lg text-gray-500 sm:mt-0 sm:col-span-2 sm:text-right">
+                      07:00 - 18:00 Uhr
+                    </dd>
+                  </div>
+                  <div className="py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt className="md:text-lg text-gray-900 font-medium">Dienstag</dt>
+                    <dd className="mt-1 md:text-lg text-gray-500 sm:mt-0 sm:col-span-2 sm:text-right">
+                      07:00 - 18:00 Uhr
+                    </dd>
+                  </div>
+                  <div className="py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt className="md:text-lg text-gray-900 font-medium">Mittwoch</dt>
+                    <dd className="mt-1 md:text-lg text-gray-500 sm:mt-0 sm:col-span-2 sm:text-right">
+                      07:00 - 18:00 Uhr
+                    </dd>
+                  </div>
+                  <div className="py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt className="md:text-lg text-gray-900 font-medium">Donnerstag</dt>
+                    <dd className="mt-1 md:text-lg text-gray-500 sm:mt-0 sm:col-span-2 sm:text-right">
+                      07:00 - 18:00 Uhr
+                    </dd>
+                  </div>
+                  <div className="py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt className="md:text-lg text-gray-900 font-medium">Freitag</dt>
+                    <dd className="mt-1 md:text-lg text-gray-500 sm:mt-0 sm:col-span-2 sm:text-right">
+                      07:00 - 18:00 Uhr
+                    </dd>
+                  </div>
+                  <div className="py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt className="md:text-lg text-gray-900 font-medium">Samstag</dt>
+                    <dd className="mt-1 md:text-lg text-gray-500 sm:mt-0 sm:col-span-2 sm:text-right">
+                      07:00 - 12:00 Uhr
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Section>
 
       <Section>
         <div className="lg:grid lg:grid-cols-3 lg:gap-x-8">
@@ -195,6 +277,8 @@ export const query = graphql`
             gatsbyImageData(layout: FULL_WIDTH)
           }
         }
+        title
+        text
       }
     }
     settingsYaml(slug: { eq: "global" }) {

@@ -1,3 +1,4 @@
+import footer from './footer';
 import global from './global';
 
 export default {
@@ -8,5 +9,5 @@ export default {
   editor: {
     preview: false,
   },
-  files: [global],
+  files: [global, footer],
 };

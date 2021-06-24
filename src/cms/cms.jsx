@@ -11,6 +11,7 @@ import animal from './animal/index';
 import category from './category/index';
 import setting from './setting/index';
 import article from './article';
+import legal from './legal';
 
 // See https://www.netlifycms.org/docs/configuration-options/#locale
 CMS.registerLocale('de', de);
@@ -39,7 +40,7 @@ init({
     // See https://www.netlifycms.org/docs/beta-features/#manual-initialization
     load_config_file: false,
     // See https://www.netlifycms.org/docs/collection-types/
-    collections: [page, article, animal, category, setting],
+    collections: [page, article, animal, category, setting, legal],
   },
 });
 

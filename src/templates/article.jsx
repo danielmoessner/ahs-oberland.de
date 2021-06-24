@@ -4,12 +4,20 @@ import PropTypes from 'prop-types';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import Layout from '../components/Layout';
 import Section from '../components/Section';
+import Seo from '../components/Seo';
 
 function Page({ data }) {
   const article = { html: data.markdownRemark.html, ...data.markdownRemark.frontmatter };
 
+  const meta = {
+    title: article.title,
+    description: article.description,
+    image: article.image,
+  };
+
   return (
     <Layout>
+      <Seo meta={meta} />
       <Section noPadding>
         <div className="pt-10 pb-12 lg:pt-12 lg:pb-20">
           <div className="mb-10">
