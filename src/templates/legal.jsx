@@ -18,7 +18,7 @@ function Page({ data }) {
       <Seo meta={meta} />
       <Section>
         <article
-          className="prose"
+          className="prose mx-auto"
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: legal.html }}
         />

@@ -31,7 +31,7 @@ function Component({ header }) {
   }, [scrolled]);
 
   return (
-    <header>
+    <header className="-mt-24">
       <section>
         <div style={{ transform: `translateY(${scrolled / 2}px)` }}>
           <GatsbyImage image={header.image.childImageSharp.gatsbyImageData} alt="Header Bild" />
@@ -39,7 +39,7 @@ function Component({ header }) {
       </section>
 
       <section className="relative">
-        <div className="w-1/2 bg-blue absolute top-0 left-0 transform -translate-y-full h-16" />
+        <div className="w-1/2 bg-blue absolute top-0 left-0 transform -translate-y-16 h-20" />
         <Container>
           <div className="w-1/2 bg-blue z-0 absolute top-0 left-0 transform h-full" />
           <div className="col-span-5 relative">

@@ -5,7 +5,6 @@ import React from 'react';
 import Animal from '../components/Animal';
 import AnimalCard from '../components/AnimalCard';
 import Container from '../components/Container';
-import '../styles/global.css';
 import page from './page/index';
 import setting from './setting/index';
 import article from './article';

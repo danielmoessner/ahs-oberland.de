@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
 // import { GatsbyImage } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
-import { GatsbyImage } from 'gatsby-plugin-image';
+// import { GatsbyImage } from 'gatsby-plugin-image';
 import { MailIcon, PhoneIcon } from '@heroicons/react/outline';
 import Container from '../components/Container';
 import Layout from '../components/Layout';
@@ -11,33 +11,12 @@ import Seo from '../components/Seo';
 import Heading from '../components/Heading';
 // import Section from '../components/Section';
 // import Articles from '../components/Articles';
+import Header from '../components/Header';
 
 function Page({ data }) {
   const page = data.pageYaml;
   // const global = data.settingYaml;
   // const posts = data.allMarkdownRemark.nodes.map((node) => ({ ...node.frontmatter }));
-
-  // determined if page has scrolled and if the view is on mobile
-  const [scrolled, setScrolled] = useState(0);
-
-  // change state on scroll
-  useEffect(() => {
-    // eslint-disable-next-line no-undef
-    const w = window;
-    // eslint-disable-next-line no-undef
-    const d = document;
-
-    const handleScroll = () => {
-      setScrolled(w.scrollY);
-    };
-
-    d.addEventListener('scroll', handleScroll, { passive: true });
-
-    return () => {
-      // clean up the event handler when the component unmounts
-      d.removeEventListener('scroll', handleScroll);
-    };
-  }, [scrolled]);
 
   // const logos = [
   //   {
@@ -93,31 +72,7 @@ function Page({ data }) {
     <Layout>
       <Seo meta={page.meta} />
 
-      <section>
-        <div style={{ transform: `translateY(${scrolled / 2}px)` }}>
-          <GatsbyImage
-            image={page.header.image.childImageSharp.gatsbyImageData}
-            alt="Header Bild"
-          />
-        </div>
-      </section>
-
-      <section className="relative">
-        <div className="w-1/2 bg-blue absolute top-0 left-0 transform -translate-y-full h-16" />
-        <Container>
-          <div className="w-1/2 bg-blue z-0 absolute top-0 left-0 transform h-full" />
-          <div className="col-span-5 relative">
-            <div className="">
-              <div className="pb-16 text-white">
-                <Heading color="text-white" element="h1">
-                  {page.header.title}
-                </Heading>
-                <p className="mt-8 text-xl">{page.header.text}</p>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
+      <Header header={page.header} />
 
       <section className="relative z-20 bg-white">
         <Container>

@@ -9,7 +9,7 @@ function Component({ children, noPadding }) {
   return (
     <section>
       <Container>
-        <div className="bg-white border-b border-gray-100">
+        <div className="col-span-12 bg-white border-b border-gray-100">
           <div className={noPadding ? '' : 'pt-16 pb-20 lg:pt-24 lg:pb-28'}>
             <div className="relative px-4 sm:px-6 lg:px-8">
               <div className="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">

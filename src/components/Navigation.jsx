@@ -33,13 +33,13 @@ function Component() {
   const { navigation, global } = data;
 
   return (
-    <nav className="fixed top-0 z-40 w-full border-b border-gray-800 border-opacity-10">
+    <nav className="bg-white relative z-30 w-full border-opacity-10">
       <Container>
         <div className="col-span-12 ">
           <Popover className="relative">
             {({ open }) => (
               <>
-                <div className="flex justify-between items-center py-3 md:justify-start md:space-x-10">
+                <div className="flex justify-between items-center py-1 md:justify-start md:space-x-10">
                   <div className="flex justify-start lg:w-0 lg:flex-1">
                     <Link className="block py-1 z-50" to="/">
                       <GatsbyImage
@@ -80,11 +80,11 @@ function Component() {
                   <Popover.Panel
                     focus
                     static
-                    className="absolute top-0 inset-x-0 pt-2 transition transform origin-top-right z-40 md:hidden"
+                    className="absolute top-0 inset-x-0 pt-2 transition transform origin-top-right z-50 md:hidden"
                   >
-                    <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
+                    <div className="rounded-lg shadow-lg bg-white">
                       <div className="pt-4 pb-6 px-5">
-                        <div className="flex items-center justify-between border-b pb-2">
+                        <div className="flex items-center justify-between">
                           <Link to="/">
                             <GatsbyImage
                               className="w-24 h-auto"
@@ -93,13 +93,13 @@ function Component() {
                             />
                           </Link>
                           <div className="">
-                            <Popover.Button className="bg-white rounded-md border-2 border-gray-100 px-2 py-1.5 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none">
+                            <Popover.Button className="bg-white rounded-md px-2 py-1.5 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none">
                               <span className="sr-only">Menü schließen</span>
                               <XIcon className="h-6 w-6" aria-hidden="true" />
                             </Popover.Button>
                           </div>
                         </div>
-                        <div className="mt-6 space-y-4">
+                        <div className="space-y-4">
                           {navigation.links &&
                             navigation.links.map((link) => {
                               if (link.type === 'link')
