@@ -7,5 +7,5 @@
   to = "/"
 
 [[redirects]]
-  from = "/aktuelles/"
+  from = "/aktuelles"
   to = "/"
