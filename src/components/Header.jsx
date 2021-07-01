@@ -34,17 +34,21 @@ function Component({ header }) {
     <header className="-mt-24">
       <section>
         <div style={{ transform: `translateY(${scrolled / 2}px)` }}>
-          <GatsbyImage image={header.image.childImageSharp.gatsbyImageData} alt="Header Bild" />
+          <GatsbyImage
+            className="h-96 md:h-auto"
+            image={header.image.childImageSharp.gatsbyImageData}
+            alt="Header Bild"
+          />
         </div>
       </section>
 
       <section className="relative">
-        <div className="w-1/2 bg-blue absolute top-0 left-0 transform -translate-y-16 h-20" />
+        <div className="w-1/2 bg-blue hidden top-0 left-0 transform -translate-y-16 h-20 absolute md:block" />
         <Container>
-          <div className="w-1/2 bg-blue z-0 absolute top-0 left-0 transform h-full" />
-          <div className="col-span-5 relative">
+          <div className="w-full md:w-1/2 bg-blue z-0 absolute top-0 left-0 transform h-full" />
+          <div className="col-span-12 md:col-span-5 relative">
             <div className="">
-              <div className="pb-16 text-white">
+              <div className="pt-16 pb-16 text-white md:pt-0">
                 <Heading color="text-white" element="h1">
                   {header.title}
                 </Heading>

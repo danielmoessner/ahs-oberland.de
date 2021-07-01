@@ -20,7 +20,7 @@ function Page({ data }) {
       <Header header={page.header} />
       <section className="relative z-20 bg-white">
         <Container>
-          <div className="col-span-6 py-16">
+          <div className="col-span-12 py-16 md:col-span-6">
             <Heading element="h2" size="h2">
               Unsere Kontaktdaten
             </Heading>
@@ -55,12 +55,12 @@ function Page({ data }) {
               </div>
             </div>
           </div>
-          <div className="col-span-6 py-16">
+          <div className="col-span-12 py-16 md:col-span-6">
             <Heading element="h2" size="h2">
               Unsere Öffnungszeiten
             </Heading>
             <div className="mt-10">
-              <div className="max-w-lg mx-auto lg:max-w-none">
+              <div className="max-w-lg lg:max-w-none">
                 <dl className="sm:divide-y sm:divide-gray-200">
                   <div className="py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                     <dt className="md:text-lg text-gray-900 font-medium">Montag</dt>
