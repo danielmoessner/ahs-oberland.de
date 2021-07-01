@@ -1,0 +1,9 @@
+collection: setting
+slug: navigation
+links:
+  - type: link
+    text: Startseite
+    url: /
+  - type: link
+    text: Kontakt
+    url: /kontakt/

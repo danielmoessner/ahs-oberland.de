@@ -1,75 +1,212 @@
-import React from 'react';
-import { graphql, Link } from 'gatsby';
+import React, { useEffect, useState } from 'react';
+import { graphql } from 'gatsby';
 // import { GatsbyImage } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import { CheckIcon, MailIcon, PhoneIcon } from '@heroicons/react/outline';
+import { MailIcon, PhoneIcon } from '@heroicons/react/outline';
 import Container from '../components/Container';
 import Layout from '../components/Layout';
 // import AnimalCard from '../components/AnimalCard';
 import Seo from '../components/Seo';
 import Heading from '../components/Heading';
-import Section from '../components/Section';
-import Articles from '../components/Articles';
+// import Section from '../components/Section';
+// import Articles from '../components/Articles';
 
 function Page({ data }) {
   const page = data.pageYaml;
-  const global = data.settingsYaml;
-  const posts = data.allMarkdownRemark.nodes.map((node) => ({ ...node.frontmatter }));
+  // const global = data.settingYaml;
+  // const posts = data.allMarkdownRemark.nodes.map((node) => ({ ...node.frontmatter }));
 
-  const logos = [
-    {
-      name: 'Audi',
-      imageUrl:
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Audi-Logo_2016.svg/800px-Audi-Logo_2016.svg.png',
-    },
-    {
-      name: 'VW',
-      imageUrl:
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Volkswagen_logo_2019.svg/2000px-Volkswagen_logo_2019.svg.png',
-    },
-    {
-      name: 'Porsche',
-      imageUrl:
-        'https://upload.wikimedia.org/wikipedia/de/thumb/7/70/Porsche_Logo.svg/2000px-Porsche_Logo.svg.png',
-    },
-    {
-      name: 'Seat',
-      imageUrl:
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/SEAT_Logo_from_2017.svg/967px-SEAT_Logo_from_2017.svg.png',
-    },
-  ];
+  // determined if page has scrolled and if the view is on mobile
+  const [scrolled, setScrolled] = useState(0);
 
-  const features = [
-    {
-      name: 'Wir helfen Ihnen mit',
-      description: 'You can manage phone, email and chat conversations all from a single mailbox.',
-    },
-    {
-      name: 'Leistung 2',
-      description: 'You can manage phone, email and chat conversations all from a single mailbox.',
-    },
-    {
-      name: 'Gebrauchtwagen Ankauf',
-      description: 'You can manage phone, email and chat conversations all from a single mailbox.',
-    },
-    {
-      name: 'Gebrauchtwagen Verkauf',
-      description: 'You can manage phone, email and chat conversations all from a single mailbox.',
-    },
-    {
-      name: 'Kundenservice',
-      description: 'Find what you need with advanced filters, bulk actions, and quick views.',
-    },
-    {
-      name: 'Kontakt',
-      description: 'Find what you need with advanced filters, bulk actions, and quick views.',
-    },
-  ];
+  // change state on scroll
+  useEffect(() => {
+    // eslint-disable-next-line no-undef
+    const w = window;
+    // eslint-disable-next-line no-undef
+    const d = document;
+
+    const handleScroll = () => {
+      setScrolled(w.scrollY);
+    };
+
+    d.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      // clean up the event handler when the component unmounts
+      d.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrolled]);
+
+  // const logos = [
+  //   {
+  //     name: 'Audi',
+  //     imageUrl:
+  //       'https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Audi-Logo_2016.svg/800px-Audi-Logo_2016.svg.png',
+  //   },
+  //   {
+  //     name: 'VW',
+  //     imageUrl:
+  //       'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Volkswagen_logo_2019.svg/2000px-Volkswagen_logo_2019.svg.png',
+  //   },
+  //   {
+  //     name: 'Porsche',
+  //     imageUrl:
+  //       'https://upload.wikimedia.org/wikipedia/de/thumb/7/70/Porsche_Logo.svg/2000px-Porsche_Logo.svg.png',
+  //   },
+  //   {
+  //     name: 'Seat',
+  //     imageUrl:
+  //       'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/SEAT_Logo_from_2017.svg/967px-SEAT_Logo_from_2017.svg.png',
+  //   },
+  // ];
+
+  // const features = [
+  //   {
+  //     name: 'Wir helfen Ihnen mit',
+  //     description: 'You can manage phone, email and chat conversations all from a single mailbox.',
+  //   },
+  //   {
+  //     name: 'Leistung 2',
+  //     description: 'You can manage phone, email and chat conversations all from a single mailbox.',
+  //   },
+  //   {
+  //     name: 'Gebrauchtwagen Ankauf',
+  //     description: 'You can manage phone, email and chat conversations all from a single mailbox.',
+  //   },
+  //   {
+  //     name: 'Gebrauchtwagen Verkauf',
+  //     description: 'You can manage phone, email and chat conversations all from a single mailbox.',
+  //   },
+  //   {
+  //     name: 'Kundenservice',
+  //     description: 'Find what you need with advanced filters, bulk actions, and quick views.',
+  //   },
+  //   {
+  //     name: 'Kontakt',
+  //     description: 'Find what you need with advanced filters, bulk actions, and quick views.',
+  //   },
+  // ];
 
   return (
     <Layout>
       <Seo meta={page.meta} />
+
+      <section>
+        <div style={{ transform: `translateY(${scrolled / 2}px)` }}>
+          <GatsbyImage
+            image={page.header.image.childImageSharp.gatsbyImageData}
+            alt="Header Bild"
+          />
+        </div>
+      </section>
+
+      <section className="relative">
+        <div className="w-1/2 bg-blue absolute top-0 left-0 transform -translate-y-full h-16" />
+        <Container>
+          <div className="w-1/2 bg-blue z-0 absolute top-0 left-0 transform h-full" />
+          <div className="col-span-5 relative">
+            <div className="">
+              <div className="pb-16 text-white">
+                <Heading color="text-white" element="h1">
+                  {page.header.title}
+                </Heading>
+                <p className="mt-8 text-xl">{page.header.text}</p>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="relative z-20 bg-white">
+        <Container>
+          <div className="col-span-6 py-16">
+            <Heading element="h2" size="h2">
+              Unsere Kontaktdaten
+            </Heading>
+            <div className="mt-10">
+              <div className="mt-3">
+                <p className="text-xl text-gray-800">
+                  Weiterhin sind wir wie gewohnt für Sie da. <br />
+                  Sie erreichen uns unter folgenden Kontaktdaten:
+                </p>
+              </div>
+              <div className="mt-9">
+                <div className="flex items-center">
+                  <div className="flex-shrink-0">
+                    <PhoneIcon className="h-6 w-6 text-gray-800" aria-hidden="true" />
+                  </div>
+                  <div className="ml-3 text-lg font-medium text-gray-900">
+                    <a href="tel:+49(0)36651 380 90" rel="noreferrer">
+                      +49(0)36651 380 90
+                    </a>
+                  </div>
+                </div>
+                <div className="mt-6 flex items-center">
+                  <div className="flex-shrink-0">
+                    <MailIcon className="h-6 w-6 text-gray-800" aria-hidden="true" />
+                  </div>
+                  <div className="ml-3 text-lg font-medium text-gray-900">
+                    <a target="_blank" href="mailto:info@ahs-oberland.de" rel="noreferrer">
+                      info@ahs-oberland.de
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-span-6 py-16">
+            <Heading element="h2" size="h2">
+              Unsere Öffnungszeiten
+            </Heading>
+            <div className="mt-10">
+              <div className="max-w-lg mx-auto lg:max-w-none">
+                <dl className="sm:divide-y sm:divide-gray-200">
+                  <div className="py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt className="md:text-lg text-gray-900 font-medium">Montag</dt>
+                    <dd className="mt-1 md:text-lg text-gray-800 sm:mt-0 sm:col-span-2 sm:text-right">
+                      07:00 - 18:00 Uhr
+                    </dd>
+                  </div>
+                  <div className="py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt className="md:text-lg text-gray-900 font-medium">Dienstag</dt>
+                    <dd className="mt-1 md:text-lg text-gray-800 sm:mt-0 sm:col-span-2 sm:text-right">
+                      07:00 - 18:00 Uhr
+                    </dd>
+                  </div>
+                  <div className="py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt className="md:text-lg text-gray-900 font-medium">Mittwoch</dt>
+                    <dd className="mt-1 md:text-lg text-gray-800 sm:mt-0 sm:col-span-2 sm:text-right">
+                      07:00 - 18:00 Uhr
+                    </dd>
+                  </div>
+                  <div className="py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt className="md:text-lg text-gray-900 font-medium">Donnerstag</dt>
+                    <dd className="mt-1 md:text-lg text-gray-800 sm:mt-0 sm:col-span-2 sm:text-right">
+                      07:00 - 18:00 Uhr
+                    </dd>
+                  </div>
+                  <div className="py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt className="md:text-lg text-gray-900 font-medium">Freitag</dt>
+                    <dd className="mt-1 md:text-lg text-gray-800 sm:mt-0 sm:col-span-2 sm:text-right">
+                      07:00 - 18:00 Uhr
+                    </dd>
+                  </div>
+                  <div className="py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt className="md:text-lg text-gray-900 font-medium">Samstag</dt>
+                    <dd className="mt-1 md:text-lg text-gray-800 sm:mt-0 sm:col-span-2 sm:text-right">
+                      07:00 - 12:00 Uhr
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* 
       <section>
         <Container>
           <div className="relative overflow-hidden">
@@ -256,6 +393,7 @@ function Page({ data }) {
           </div>
         </div>
       </Section>
+     */}
     </Layout>
   );
 }
@@ -281,7 +419,7 @@ export const query = graphql`
         text
       }
     }
-    settingsYaml(slug: { eq: "global" }) {
+    settingYaml(slug: { eq: "global" }) {
       logo {
         childImageSharp {
           gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)

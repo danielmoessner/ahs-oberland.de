@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 // import { Transition } from '@headlessui/react';
@@ -8,19 +8,52 @@ import Heading from './Heading';
 import ImageData from '../types/ImageData';
 
 function Component({ header }) {
+  // determined if page has scrolled and if the view is on mobile
+  const [scrolled, setScrolled] = useState(0);
+
+  // change state on scroll
+  useEffect(() => {
+    // eslint-disable-next-line no-undef
+    const w = window;
+    // eslint-disable-next-line no-undef
+    const d = document;
+
+    const handleScroll = () => {
+      setScrolled(w.scrollY);
+    };
+
+    d.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      // clean up the event handler when the component unmounts
+      d.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrolled]);
+
   return (
     <header>
-      <Container>
-        <div className="bg-white border-b border-gray-100">
-          <div className="relative overflow-hidden">
-            <GatsbyImage image={header.image.childImageSharp.gatsbyImageData} alt={header.title} />
-            <div className="absolute px-8 pb-6 pt-8 bg-white top-16 left-20 bg-opacity-80 md:max-w-2xl">
-              <Heading>{header.title}</Heading>
-              <p className="mt-3 mx-auto text-lg text-gray-600 sm:text-xl md:mt-5">{header.text}</p>
+      <section>
+        <div style={{ transform: `translateY(${scrolled / 2}px)` }}>
+          <GatsbyImage image={header.image.childImageSharp.gatsbyImageData} alt="Header Bild" />
+        </div>
+      </section>
+
+      <section className="relative">
+        <div className="w-1/2 bg-blue absolute top-0 left-0 transform -translate-y-full h-16" />
+        <Container>
+          <div className="w-1/2 bg-blue z-0 absolute top-0 left-0 transform h-full" />
+          <div className="col-span-5 relative">
+            <div className="">
+              <div className="pb-16 text-white">
+                <Heading color="text-white" element="h1">
+                  {header.title}
+                </Heading>
+                {header.text && <p className="mt-8 text-xl">{header.text}</p>}
+              </div>
             </div>
           </div>
-        </div>
-      </Container>
+        </Container>
+      </section>
     </header>
   );
 }

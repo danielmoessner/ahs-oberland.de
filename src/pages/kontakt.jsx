@@ -8,7 +8,7 @@ import { MailIcon, PhoneIcon } from '@heroicons/react/outline';
 import Container from '../components/Container';
 import Layout from '../components/Layout';
 import Seo from '../components/Seo';
-// import Heading from '../components/Heading';
+import Heading from '../components/Heading';
 import Header from '../components/Header';
 
 function Page({ data }) {
@@ -18,70 +18,87 @@ function Page({ data }) {
     <Layout>
       <Seo meta={page.meta} />
       <Header header={page.header} />
-      <section>
+      <section className="relative z-20 bg-white">
         <Container>
-          <div className="bg-white">
-            <div className="bg-white">
-              <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-                <div className="max-w-lg mx-auto md:max-w-none md:grid md:grid-cols-2 md:gap-8">
-                  <div>
-                    <h2 className="text-2xl font-extrabold text-gray-900 sm:text-3xl">Kontakt</h2>
-                    <div className="mt-3">
-                      <p className="text-lg text-gray-500">
-                        Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa
-                        dictumst amet. Sapien tortor lacus arcu.
-                      </p>
-                    </div>
-                    <div className="mt-9">
-                      <div className="flex">
-                        <div className="flex-shrink-0">
-                          <PhoneIcon className="h-6 w-6 text-gray-400" aria-hidden="true" />
-                        </div>
-                        <div className="ml-3 text-base text-gray-500">
-                          <p>+49 (089) 123 4567</p>
-                          <p className="mt-1">Montag-Freitag 8:00 - 16:00 Uhr</p>
-                        </div>
-                      </div>
-                      <div className="mt-6 flex">
-                        <div className="flex-shrink-0">
-                          <MailIcon className="h-6 w-6 text-gray-400" aria-hidden="true" />
-                        </div>
-                        <div className="ml-3 text-base text-gray-500">
-                          <p>kontakt@example.com</p>
-                        </div>
-                      </div>
-                    </div>
+          <div className="col-span-6 py-16">
+            <Heading element="h2" size="h2">
+              Unsere Kontaktdaten
+            </Heading>
+            <div className="mt-10">
+              <div className="mt-3">
+                <p className="text-xl text-gray-800">
+                  Weiterhin sind wir wie gewohnt für Sie da. <br />
+                  Sie erreichen uns unter folgenden Kontaktdaten:
+                </p>
+              </div>
+              <div className="mt-9">
+                <div className="flex items-center">
+                  <div className="flex-shrink-0">
+                    <PhoneIcon className="h-6 w-6 text-gray-800" aria-hidden="true" />
                   </div>
-                  <div className="mt-12 sm:mt-16 md:mt-0">
-                    <h2 className="text-2xl font-extrabold text-gray-900 sm:text-3xl">Support</h2>
-                    <div className="mt-3">
-                      <p className="text-lg text-gray-500">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni, repellat
-                        error corporis doloribus similique, voluptatibus numquam quam, quae officiis
-                        facilis.
-                      </p>
-                    </div>
-                    <div className="mt-9">
-                      <div className="flex">
-                        <div className="flex-shrink-0">
-                          <PhoneIcon className="h-6 w-6 text-gray-400" aria-hidden="true" />
-                        </div>
-                        <div className="ml-3 text-base text-gray-500">
-                          <p>+49 (089) 123 4567</p>
-                          <p className="mt-1">Montag-Freitag 8:00 - 16:00 Uhr</p>
-                        </div>
-                      </div>
-                      <div className="mt-6 flex">
-                        <div className="flex-shrink-0">
-                          <MailIcon className="h-6 w-6 text-gray-400" aria-hidden="true" />
-                        </div>
-                        <div className="ml-3 text-base text-gray-500">
-                          <p>support@example.com</p>
-                        </div>
-                      </div>
-                    </div>
+                  <div className="ml-3 text-lg font-medium text-gray-900">
+                    <a href="tel:+49(0)36651 380 90" rel="noreferrer">
+                      +49(0)36651 380 90
+                    </a>
                   </div>
                 </div>
+                <div className="mt-6 flex items-center">
+                  <div className="flex-shrink-0">
+                    <MailIcon className="h-6 w-6 text-gray-800" aria-hidden="true" />
+                  </div>
+                  <div className="ml-3 text-lg font-medium text-gray-900">
+                    <a target="_blank" href="mailto:info@ahs-oberland.de" rel="noreferrer">
+                      info@ahs-oberland.de
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-span-6 py-16">
+            <Heading element="h2" size="h2">
+              Unsere Öffnungszeiten
+            </Heading>
+            <div className="mt-10">
+              <div className="max-w-lg mx-auto lg:max-w-none">
+                <dl className="sm:divide-y sm:divide-gray-200">
+                  <div className="py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt className="md:text-lg text-gray-900 font-medium">Montag</dt>
+                    <dd className="mt-1 md:text-lg text-gray-800 sm:mt-0 sm:col-span-2 sm:text-right">
+                      07:00 - 18:00 Uhr
+                    </dd>
+                  </div>
+                  <div className="py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt className="md:text-lg text-gray-900 font-medium">Dienstag</dt>
+                    <dd className="mt-1 md:text-lg text-gray-800 sm:mt-0 sm:col-span-2 sm:text-right">
+                      07:00 - 18:00 Uhr
+                    </dd>
+                  </div>
+                  <div className="py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt className="md:text-lg text-gray-900 font-medium">Mittwoch</dt>
+                    <dd className="mt-1 md:text-lg text-gray-800 sm:mt-0 sm:col-span-2 sm:text-right">
+                      07:00 - 18:00 Uhr
+                    </dd>
+                  </div>
+                  <div className="py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt className="md:text-lg text-gray-900 font-medium">Donnerstag</dt>
+                    <dd className="mt-1 md:text-lg text-gray-800 sm:mt-0 sm:col-span-2 sm:text-right">
+                      07:00 - 18:00 Uhr
+                    </dd>
+                  </div>
+                  <div className="py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt className="md:text-lg text-gray-900 font-medium">Freitag</dt>
+                    <dd className="mt-1 md:text-lg text-gray-800 sm:mt-0 sm:col-span-2 sm:text-right">
+                      07:00 - 18:00 Uhr
+                    </dd>
+                  </div>
+                  <div className="py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt className="md:text-lg text-gray-900 font-medium">Samstag</dt>
+                    <dd className="mt-1 md:text-lg text-gray-800 sm:mt-0 sm:col-span-2 sm:text-right">
+                      07:00 - 12:00 Uhr
+                    </dd>
+                  </div>
+                </dl>
               </div>
             </div>
           </div>

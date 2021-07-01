@@ -8,10 +8,33 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   mode: 'jit',
   theme: {
+    fontFamily: {
+      sans: [
+        'Arial',
+        'system-ui',
+        'BlinkMacSystemFont',
+        '-apple-system',
+        'Segoe UI',
+        'Roboto',
+        'Oxygen',
+        'Ubuntu',
+        'Cantarell',
+        'Fira Sans',
+        'Droid Sans',
+        'Helvetica Neue',
+        'sans-serif',
+      ],
+    },
     colors: {
       white: '#fff',
       black: '#000',
       transparent: 'transparent',
+      // ahs oberland colors
+      brown: '#541918',
+      red: '#C81617',
+      blue: '#0069B4',
+      sky: '#60B8DF',
+      gray: '#61747E',
       // Primary
       'blue-050': '#E6F6FF',
       'blue-100': '#BAE3FF',

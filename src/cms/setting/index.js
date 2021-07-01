@@ -1,5 +1,6 @@
 import footer from './footer';
 import global from './global';
+import navigation from './navigation';
 
 export default {
   name: 'setting',
@@ -9,5 +10,5 @@ export default {
   editor: {
     preview: false,
   },
-  files: [global, footer],
+  files: [global, navigation, footer],
 };

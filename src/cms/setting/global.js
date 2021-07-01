@@ -9,13 +9,7 @@ export default {
   fields: [
     collection('page'),
     slug('global'),
-    {
-      label: 'Titel in der Navigation',
-      name: 'navigationTitle',
-      widget: 'string',
-      default: 'Wildtiere',
-    },
-    { label: 'URL der Seite', name: 'siteUrl', widget: 'string', required: false },
     { label: 'Favicon', name: 'favicon', widget: 'image' },
+    { label: 'Logo', name: 'logo', widget: 'image' },
   ],
 };
