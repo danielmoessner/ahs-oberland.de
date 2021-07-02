@@ -39,16 +39,12 @@ function Component() {
           <Popover className="relative">
             {({ open }) => (
               <>
-                <div className="flex justify-between items-center py-1 md:justify-start md:space-x-10">
+                <div className="flex justify-between items-center py-3 md:justify-start md:space-x-10">
                   <div className="flex justify-start lg:w-0 lg:flex-1">
                     <Link className="py-1 z-50 flex items-center space-x-4" to="/">
-                      <GatsbyImage
-                        className="w-36 h-auto"
-                        alt="AHS Oberland GmbH"
-                        image={global.logo.childImageSharp.gatsbyImageData}
-                      />
-                      <h1 className="hidden sm:block font-ethno text-xl lg:text-3xl xl:text-4xl">
-                        AHS Oberland GmbH
+                      <h1 className="relative font-ethno text-xl lg:text-3xl xl:text-5xl">
+                        AHS Oberland&nbsp;
+                        <span className="">GmbH</span>
                       </h1>
                     </Link>
                   </div>
