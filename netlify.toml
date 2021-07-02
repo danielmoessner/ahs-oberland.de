@@ -5,7 +5,9 @@
 [[redirects]]
   from = "/aktuelles/*"
   to = "/"
+  force = true
 
 [[redirects]]
   from = "/aktuelles"
   to = "/"
+  force = true
