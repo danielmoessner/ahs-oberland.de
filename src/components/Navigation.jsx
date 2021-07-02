@@ -47,8 +47,8 @@ function Component() {
                         alt="AHS Oberland GmbH"
                         image={global.logo.childImageSharp.gatsbyImageData}
                       />
-                      <h1 className="hidden sm:block font-ethno text-xl lg:text-3xl">
-                        AHS Oberland
+                      <h1 className="hidden sm:block font-ethno text-xl lg:text-3xl xl:text-4xl">
+                        AHS Oberland GmbH
                       </h1>
                     </Link>
                   </div>
