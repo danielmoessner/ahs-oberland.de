@@ -24,6 +24,7 @@ module.exports = {
         'Helvetica Neue',
         'sans-serif',
       ],
+      ethno: ['ethnocentric', 'sans-serif'],
     },
     colors: {
       white: '#fff',

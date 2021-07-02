@@ -15,10 +15,10 @@ Telefon: +49(0)36651 380 90\
 E-Mail: info@ahs-oberland.de
 
 Sitz der Gesellschaft: \
-Amtsgericht\
-HRB
+Amtsgericht Jena\
+HRB 518141
 
-Steuer-Nr.: \
+Steuer-Nr.: 161/105/17355\
 Ust.ID.-Nr.: DE341961009\
 Geschäftsführer: Stefan Splitter
 

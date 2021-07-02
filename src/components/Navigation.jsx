@@ -41,12 +41,15 @@ function Component() {
               <>
                 <div className="flex justify-between items-center py-1 md:justify-start md:space-x-10">
                   <div className="flex justify-start lg:w-0 lg:flex-1">
-                    <Link className="block py-1 z-50" to="/">
+                    <Link className="py-1 z-50 flex items-center space-x-4" to="/">
                       <GatsbyImage
                         className="w-36 h-auto"
                         alt="AHS Oberland GmbH"
                         image={global.logo.childImageSharp.gatsbyImageData}
                       />
+                      <h1 className="hidden sm:block font-ethno text-xl lg:text-3xl">
+                        AHS Oberland
+                      </h1>
                     </Link>
                   </div>
                   <div className="md:hidden">
