@@ -21,6 +21,13 @@ export default {
       hint: 'Erscheint in der URL: /aktuelles/<slug>/',
     },
     { label: 'Datum', name: 'date', widget: 'date' },
+    {
+      label: 'Startseite',
+      name: 'frontpage',
+      widget: 'boolean',
+      hint: 'Erscheint auf der Startseite',
+      required: false,
+    },
     { label: 'Bild', name: 'image', widget: 'image' },
     { label: 'Beschreibung', name: 'description', widget: 'text' },
     { label: 'Inhalt', name: 'body', widget: 'markdown' },

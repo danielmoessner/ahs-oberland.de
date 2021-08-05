@@ -4,14 +4,15 @@ import { Link, graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import ImageData from '../types/ImageData';
 // import { Transition } from '@headlessui/react';
+import Heading from './Heading';
 
 function Component({ articles, title }) {
   return (
     <>
       <div className="">
-        <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">
+        <Heading element="h2" size="h2">
           {title}
-        </h2>
+        </Heading>
       </div>
       <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
         {articles.map((article) => (
@@ -33,7 +34,9 @@ function Component({ articles, title }) {
                   </Link>
                 </p> */}
                 <Link to={`/aktuelles/${article.slug}/`} className="block mt-2">
-                  <p className="text-xl font-semibold text-gray-900">{article.title}</p>
+                  <Heading element="h3" size="h3" className="text-xl font-semibold text-gray-900">
+                    {article.title}
+                  </Heading>
                   <p className="mt-3 text-base text-gray-500">{article.description}</p>
                 </Link>
               </div>

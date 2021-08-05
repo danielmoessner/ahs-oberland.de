@@ -5,6 +5,7 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import Layout from '../components/Layout';
 import Section from '../components/Section';
 import Seo from '../components/Seo';
+import Heading from '../components/Heading';
 
 function Page({ data }) {
   const article = { html: data.markdownRemark.html, ...data.markdownRemark.frontmatter };
@@ -21,15 +22,15 @@ function Page({ data }) {
       <Section noPadding>
         <div className="pt-10 pb-12 lg:pt-12 lg:pb-20">
           <div className="mb-10">
-            <Link className="text-base font-medium" to="/aktuelles/">
-              &larr;&nbsp;Zurück zu allen Artikeln
+            <Link className="text-base font-medium" to="/">
+              &larr;&nbsp;Zurück zur Startseite
             </Link>
           </div>
           <div className="flex justify-between space-x-10">
             <article className="text-base max-w-prose">
-              <h2 className="text-3xl max-w-prose leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+              <Heading element="h2" size="h2">
                 {article.title}
-              </h2>
+              </Heading>
               <p className="mt-8 text-lg text-gray-500 max-w-prose">{article.description}</p>
               <div
                 className="mt-5 prose prose-indigo text-gray-500"

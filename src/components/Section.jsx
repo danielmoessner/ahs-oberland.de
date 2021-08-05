@@ -7,7 +7,7 @@ import Container from './Container';
 
 function Component({ children, noPadding }) {
   return (
-    <section>
+    <section className="relative bg-white">
       <Container>
         <div className="col-span-12 bg-white border-b border-gray-100">
           <div className={noPadding ? '' : 'pt-16 pb-20 lg:pt-24 lg:pb-28'}>

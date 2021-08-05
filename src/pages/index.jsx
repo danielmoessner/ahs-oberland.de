@@ -1,8 +1,8 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 // import { GatsbyImage } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
-// import { GatsbyImage } from 'gatsby-plugin-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { MailIcon, PhoneIcon } from '@heroicons/react/outline';
 import Container from '../components/Container';
 import Layout from '../components/Layout';
@@ -16,7 +16,7 @@ import Header from '../components/Header';
 function Page({ data }) {
   const page = data.pageYaml;
   // const global = data.settingYaml;
-  // const posts = data.allMarkdownRemark.nodes.map((node) => ({ ...node.frontmatter }));
+  const posts = data.allMarkdownRemark.nodes.map((node) => ({ ...node.frontmatter }));
 
   // const logos = [
   //   {
@@ -157,6 +157,43 @@ function Page({ data }) {
                 </dl>
               </div>
             </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="relative z-20 bg-white pt-16 pb-32">
+        <Container>
+          <div className="col-span-12 text-center w-full">
+            <div className="pb-8">
+              <Heading element="h2" size="h2">
+                Aktuelle Neuigkeiten
+              </Heading>
+            </div>
+          </div>
+          <div className="col-span-12 grid grid-cols-10 gap-x-8 gap-y-12 md:col-start-2 md:col-span-10">
+            {posts.map((article) => (
+              <div key={article.title} className="flex flex-col overflow-hidden col-span-5">
+                <div className="flex-shrink-0">
+                  <Link to={`/aktuelles/${article.slug}/`}>
+                    <GatsbyImage
+                      className="aspect-h-10 aspect-w-16 w-full object-cover"
+                      image={article.image.childImageSharp.gatsbyImageData}
+                      alt={article.title}
+                    />
+                  </Link>
+                </div>
+                <div className="flex-1 bg-white flex flex-col justify-between">
+                  <div className="flex-1">
+                    <Link to={`/aktuelles/${article.slug}/`} className="block mt-4">
+                      <Heading element="h3" size="h3" className="text-2xl font-bold text-gray-900">
+                        {article.title}
+                      </Heading>
+                      <p className="mt-4 text-lg text-gray-500">{article.description}</p>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </Container>
       </section>
@@ -381,7 +418,9 @@ export const query = graphql`
         }
       }
     }
-    allMarkdownRemark(filter: { frontmatter: { collection: { eq: "article" } } }) {
+    allMarkdownRemark(
+      filter: { frontmatter: { collection: { eq: "article" }, frontpage: { eq: true } } }
+    ) {
       nodes {
         ...article
       }

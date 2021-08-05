@@ -7,11 +7,11 @@ function Component({ element, size, color, children, classes }) {
 
   let allClasses = classes;
   if (size === 'h1') {
-    allClasses = `text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl ${classes} ${color}`;
+    allClasses = `text-3xl font-thin tracking-tight sm:text-4xl lg:text-5xl ${classes} ${color}`;
   } else if (size === 'h2') {
-    allClasses = `text-3xl font-extrabold tracking-tight sm:text-4xl ${classes} ${color}`;
+    allClasses = `text-3xl font-thin tracking-wide sm:text-4xl ${classes} ${color}`;
   } else if (size === 'h3') {
-    allClasses = `text-2xl font-semibold ${color}`;
+    allClasses = `text-xl font-thin tracking-wide sm:text-2xl ${color}`;
   }
 
   return <Tag className={allClasses}>{children}</Tag>;
@@ -20,7 +20,7 @@ function Component({ element, size, color, children, classes }) {
 Component.defaultProps = {
   element: 'div',
   size: 'h1',
-  color: 'text-gray-800',
+  color: 'text-gray-900',
   classes: '',
 };
 

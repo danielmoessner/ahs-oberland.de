@@ -49,7 +49,7 @@ function Component({ header }) {
           <div className="col-span-12 md:col-span-5 relative">
             <div className="">
               <div className="pt-16 pb-16 text-white md:pt-0">
-                <Heading color="text-white" element="h1">
+                <Heading color="text-white" element="h1" size="h1">
                   {header.title}
                 </Heading>
                 {header.text && <p className="mt-8 text-xl">{header.text}</p>}
