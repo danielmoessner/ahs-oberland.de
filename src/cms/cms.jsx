@@ -20,16 +20,16 @@ init({
     backend: {
       name: 'git-gateway',
       branch: 'main',
-      repo: 'danielmoessner/gatsby-netlifycms.tortuga-webdesign.de',
+      repo: 'danielmoessner/ahs-oberland.de',
     },
     // See https://www.netlifycms.org/docs/beta-features/#working-with-a-local-git-repository
     local_backend: true,
     // See https://www.netlifycms.org/docs/configuration-options/#locale
     locale: 'de',
     // See https://www.netlifycms.org/docs/configuration-options/#display-url
-    display_url: 'https://gatsby-netlifycms.tortuga-webdesign.de',
+    display_url: 'https://ahs-oberland.de',
     // See https://www.netlifycms.org/docs/configuration-options/#site-url
-    site_url: 'https://gatsby-netlifycms.tortuga-webdesign.de',
+    site_url: 'https://ahs-oberland.de',
     // See https://www.netlifycms.org/docs/configuration-options/#media-folder
     media_folder: '/content/media',
     // See https://www.netlifycms.org/docs/configuration-options/#public-folder

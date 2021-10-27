@@ -420,6 +420,7 @@ export const query = graphql`
     }
     allMarkdownRemark(
       filter: { frontmatter: { collection: { eq: "article" }, frontpage: { eq: true } } }
+      sort: { fields: frontmatter___date, order: DESC }
     ) {
       nodes {
         ...article
