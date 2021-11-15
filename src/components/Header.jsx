@@ -43,12 +43,11 @@ function Component({ header }) {
       </section>
 
       <section className="relative">
-        <div className="w-1/2 bg-blue hidden top-0 left-0 transform -translate-y-16 h-20 absolute md:block" />
         <Container>
           <div className="w-full md:w-1/2 bg-blue z-0 absolute top-0 left-0 transform h-full" />
           <div className="col-span-12 md:col-span-5 relative">
             <div className="">
-              <div className="pt-16 pb-16 text-white md:pt-0">
+              <div className="pt-16 pb-16 text-white">
                 <Heading color="text-white" element="h1" size="h1">
                   {header.title}
                 </Heading>

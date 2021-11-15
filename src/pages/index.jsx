@@ -4,6 +4,7 @@ import { graphql, Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { MailIcon, PhoneIcon } from '@heroicons/react/outline';
+import { ExternalLinkIcon } from '@heroicons/react/solid';
 import Container from '../components/Container';
 import Layout from '../components/Layout';
 // import AnimalCard from '../components/AnimalCard';
@@ -16,7 +17,8 @@ import Header from '../components/Header';
 function Page({ data }) {
   const page = data.pageYaml;
   // const global = data.settingYaml;
-  const posts = data.allMarkdownRemark.nodes.map((node) => ({ ...node.frontmatter }));
+  const posts = data.articles.nodes.map((node) => ({ ...node.frontmatter }));
+  const jobs = data.jobs.nodes.map((node) => ({ ...node.frontmatter }));
 
   // const logos = [
   //   {
@@ -163,6 +165,44 @@ function Page({ data }) {
 
       <section className="relative z-20 bg-white pt-16 pb-32">
         <Container>
+          <div className="border-2 border-gray-200 col-span-12 md:col-span-8 md:col-start-3 2xl:col-span-6 2xl:col-start-4">
+            <div className="px-8 py-6">
+              <div className="grid gap-4 xl:grid-cols-2">
+                <Heading element="h2" size="h3">
+                  Jobs - Wir suchen aktuell
+                </Heading>
+                <ul>
+                  {jobs.map((job) => (
+                    <li className="flex flex-col" key={job.title}>
+                      <a
+                        href={job.file.publicURL}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="group block relative"
+                      >
+                        <div className="mb-2">
+                          <Heading element="h3" size="h4">
+                            {job.title}
+                          </Heading>
+                        </div>
+                        <p className="font-normal text-base">{job.description}</p>
+                        <ExternalLinkIcon
+                          className="w-5 h-5 absolute bottom-0 right-0 text-gray-400 group-hover:text-gray-600"
+                          aria-hidden
+                        />
+                        {/* <span className="group-hover:underline">Mehr erfahren</span> */}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="relative z-20 bg-white pt-16 pb-32">
+        <Container>
           <div className="col-span-12 text-center w-full">
             <div className="pb-8">
               <Heading element="h2" size="h2">
@@ -170,9 +210,12 @@ function Page({ data }) {
               </Heading>
             </div>
           </div>
-          <div className="col-span-12 grid grid-cols-10 gap-x-8 gap-y-12 md:col-start-2 md:col-span-10">
+          <div className="col-span-12 grid grid-cols-12 gap-x-8 gap-y-12 md:col-start-2 md:col-span-10">
             {posts.map((article) => (
-              <div key={article.title} className="flex flex-col overflow-hidden col-span-5">
+              <div
+                key={article.title}
+                className="col-span-6 flex flex-col overflow-hidden md:col-span-4"
+              >
                 <div className="flex-shrink-0">
                   <Link to={`/aktuelles/${article.slug}/`}>
                     <GatsbyImage
@@ -418,7 +461,15 @@ export const query = graphql`
         }
       }
     }
-    allMarkdownRemark(
+    jobs: allMarkdownRemark(
+      filter: { frontmatter: { collection: { eq: "job" } } }
+      sort: { fields: frontmatter___date, order: DESC }
+    ) {
+      nodes {
+        ...job
+      }
+    }
+    articles: allMarkdownRemark(
       filter: { frontmatter: { collection: { eq: "article" }, frontpage: { eq: true } } }
       sort: { fields: frontmatter___date, order: DESC }
     ) {

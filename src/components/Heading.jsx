@@ -7,11 +7,13 @@ function Component({ element, size, color, children, classes }) {
 
   let allClasses = classes;
   if (size === 'h1') {
-    allClasses = `text-3xl font-thin tracking-tight sm:text-4xl lg:text-5xl ${classes} ${color}`;
+    allClasses = `text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl ${classes} ${color}`;
   } else if (size === 'h2') {
-    allClasses = `text-3xl font-thin tracking-wide sm:text-4xl ${classes} ${color}`;
+    allClasses = `text-3xl font-bold tracking-wide sm:text-4xl ${classes} ${color}`;
   } else if (size === 'h3') {
-    allClasses = `text-xl font-thin tracking-wide sm:text-2xl ${color}`;
+    allClasses = `text-xl font-bold tracking-wide sm:text-2xl ${color}`;
+  } else if (size === 'h4') {
+    allClasses = `text-lg font-bold sm:text-xl ${color}`;
   }
 
   return <Tag className={allClasses}>{children}</Tag>;
@@ -26,7 +28,7 @@ Component.defaultProps = {
 
 Component.propTypes = {
   element: PropTypes.string,
-  size: PropTypes.oneOf(['h1', 'h2', 'h3']),
+  size: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4']),
   color: PropTypes.string,
   classes: PropTypes.string,
   children: ChildrenData.isRequired,

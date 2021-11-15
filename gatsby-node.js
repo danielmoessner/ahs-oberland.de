@@ -22,6 +22,14 @@ exports.createPages = async ({ graphql, actions }) => {
           id
         }
       }
+      jobs: allMarkdownRemark(filter: { frontmatter: { collection: { eq: "job" } } }) {
+        nodes {
+          frontmatter {
+            slug
+          }
+          id
+        }
+      }
     }
   `);
   result.data.articles.nodes.forEach((node) => {
@@ -39,8 +47,16 @@ exports.createPages = async ({ graphql, actions }) => {
       path: `rechtliches/${node.frontmatter.slug}/`,
       component: path.resolve('./src/templates/legal.jsx'),
       context: {
-        // Data passed to context is available
-        // in page queries as GraphQL variables.
+        slug: node.frontmatter.slug,
+        id: node.id,
+      },
+    });
+  });
+  result.data.legal.nodes.forEach((node) => {
+    createPage({
+      path: `jobs/${node.frontmatter.slug}/`,
+      component: path.resolve('./src/templates/job.jsx'),
+      context: {
         slug: node.frontmatter.slug,
         id: node.id,
       },

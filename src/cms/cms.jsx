@@ -9,6 +9,7 @@ import page from './page/index';
 import setting from './setting/index';
 import article from './article';
 import legal from './legal';
+import job from './job';
 
 // See https://www.netlifycms.org/docs/configuration-options/#locale
 CMS.registerLocale('de', de);
@@ -37,7 +38,7 @@ init({
     // See https://www.netlifycms.org/docs/beta-features/#manual-initialization
     load_config_file: false,
     // See https://www.netlifycms.org/docs/collection-types/
-    collections: [page, article, setting, legal],
+    collections: [page, article, job, setting, legal],
   },
 });
 
