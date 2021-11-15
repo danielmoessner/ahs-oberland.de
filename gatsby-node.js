@@ -52,16 +52,16 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     });
   });
-  result.data.legal.nodes.forEach((node) => {
-    createPage({
-      path: `jobs/${node.frontmatter.slug}/`,
-      component: path.resolve('./src/templates/job.jsx'),
-      context: {
-        slug: node.frontmatter.slug,
-        id: node.id,
-      },
-    });
-  });
+  // result.data.jobs.nodes.forEach((node) => {
+  //   createPage({
+  //     path: `jobs/${node.frontmatter.slug}/`,
+  //     component: path.resolve('./src/templates/job.jsx'),
+  //     context: {
+  //       slug: node.frontmatter.slug,
+  //       id: node.id,
+  //     },
+  //   });
+  // });
 };
 
 exports.sourceNodes = ({ actions }) => {
