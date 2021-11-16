@@ -4,12 +4,12 @@ import slug from '../symbols/slug';
 import header from '../symbols/header';
 
 export default {
-  file: 'content/page/home.yml',
-  label: 'Startseite',
-  name: 'home',
+  file: 'content/page/jobs.yml',
+  label: 'Jobs',
+  name: 'jobs',
   fields: [
     collection('page'),
-    slug('home'),
+    slug('jobs'),
     meta,
     header,
     {

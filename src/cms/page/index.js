@@ -2,6 +2,7 @@ import home from './home';
 import styleguide from './styleguide';
 import contact from './contact';
 import news from './news';
+import jobs from './jobs';
 
 export default {
   name: 'pages',
@@ -11,5 +12,5 @@ export default {
   editor: {
     preview: false,
   },
-  files: [home, news, contact, styleguide],
+  files: [home, news, jobs, contact, styleguide],
 };

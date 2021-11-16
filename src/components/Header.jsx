@@ -44,7 +44,7 @@ function Component({ header }) {
 
       <section className="relative">
         <Container>
-          <div className="w-full md:w-1/2 bg-blue z-0 absolute top-0 left-0 transform h-full" />
+          <div className="w-full md:w-1/2 bg-gradient-to-br from-blue to-[#094876] z-0 absolute top-0 left-0 transform h-full" />
           <div className="col-span-12 md:col-span-5 relative">
             <div className="">
               <div className="pt-16 pb-16 text-white">

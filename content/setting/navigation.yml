@@ -5,5 +5,8 @@ links:
     text: Startseite
     url: /
   - type: link
+    text: Jobs
+    url: /jobs/
+  - type: link
     text: Kontakt
     url: /kontakt/

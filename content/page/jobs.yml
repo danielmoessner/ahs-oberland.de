@@ -1,0 +1,11 @@
+collection: page
+slug: jobs
+meta:
+  title: Jobs
+  description: Wir freuen uns auf Ihre Bewerbung
+header:
+  title: Jobs
+  text: Wir freuen uns auf Ihre Bewerbung
+  image: ../media/test.png
+jobs:
+  title: Wir suchen aktuell

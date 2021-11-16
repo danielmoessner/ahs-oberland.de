@@ -169,7 +169,7 @@ function Page({ data }) {
             <div className="px-8 py-6">
               <div className="grid gap-4 xl:grid-cols-2">
                 <Heading element="h2" size="h3">
-                  Jobs - Wir suchen aktuell
+                  {page.jobs.title}
                 </Heading>
                 <ul>
                   {jobs.map((job) => (
@@ -452,6 +452,9 @@ export const query = graphql`
         }
         title
         text
+      }
+      jobs {
+        title
       }
     }
     settingYaml(slug: { eq: "global" }) {
