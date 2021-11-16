@@ -9,7 +9,7 @@ function Component({ link }) {
       <Link
         to={link.url}
         activeClassName="bg-gray-50"
-        className="px-3 py-1 rounded-md hidden text-base font-medium text-gray-600 hover:text-gray-900 md:block focus:outline-none focus:ring-offset-0 focus:ring-gray-800 focus:ring-opacity-10 focus:ring hover:ring-gray-800 hover:ring-opacity-5 hover:ring"
+        className="px-3 py-1 rounded-md hidden text-lg font-medium text-gray-800 hover:text-gray-900 md:block focus:outline-none focus:ring-offset-0 focus:ring-gray-800 focus:ring-opacity-90 focus:ring-2 hover:ring-gray-900 hover:ring-opacity-40 hover:ring-2"
       >
         {link.text}
       </Link>

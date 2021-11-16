@@ -33,7 +33,7 @@ function Component() {
   const { navigation, global } = data;
 
   return (
-    <nav className="bg-white relative z-30 w-full border-opacity-10">
+    <nav className="relative z-30 w-full border-opacity-90 border-b-gray-500/20 border-b-4">
       <Container>
         <div className="col-span-12 ">
           <Popover className="relative">
@@ -42,7 +42,7 @@ function Component() {
                 <div className="flex justify-between items-center py-3 md:justify-start md:space-x-10">
                   <div className="flex justify-start lg:w-0 lg:flex-1">
                     <Link className="py-1 z-50 flex items-center space-x-4" to="/">
-                      <h1 className="relative font-ethno text-xl lg:text-3xl xl:text-5xl">
+                      <h1 className="relative font-ethno text-xl lg:text-3xl xl:text-5xl text-gray-800">
                         AHS Oberland&nbsp;
                         <span className="">GmbH</span>
                       </h1>
