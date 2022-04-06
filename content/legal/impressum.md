@@ -12,6 +12,7 @@ Richard Köcher Strasse 33\
 07356 Bad Lobenstein
 
 Telefon: +49(0)36651 380 90\
+Servicetelefon: +49(0)151 56298670\
 E-Mail: info@ahs-oberland.de
 
 Sitz der Gesellschaft: \
