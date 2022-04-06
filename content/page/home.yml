@@ -7,8 +7,12 @@ meta:
 header:
   image: ../media/test.png
   title: Vielen Dank für Ihren Besuch
-  text: |-
+  text: >-
     Derzeit befindet sich unsere Webseite im Aufbau. 
+
     Weiterführende Informationen erhalten Sie in Kürze...
+
+
+    Für Fragen rundum Service und Inspektion, wählen Sie bitte dei Telefonnummer: +49(0)151 56298670
 jobs:
   title: Jobs - Wir suchen aktuell
