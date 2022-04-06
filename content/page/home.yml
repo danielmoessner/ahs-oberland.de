@@ -7,7 +7,8 @@ meta:
 header:
   image: ../media/test.png
   title: Vielen Dank für Ihren Besuch
-  text: Derzeit befindet sich unsere Webseite im Aufbau. Weiterführende
-    Informationen erhalten Sie in Kürze...
+  text: |-
+    Derzeit befindet sich unsere Webseite im Aufbau. 
+    Weiterführende Informationen erhalten Sie in Kürze...
 jobs:
   title: Jobs - Wir suchen aktuell
