@@ -1,12 +1,8 @@
 const typography = require('@tailwindcss/typography');
-const aspectRatio = require('@tailwindcss/aspect-ratio');
 const lineClamp = require('@tailwindcss/line-clamp');
-const forms = require('@tailwindcss/forms');
 
 module.exports = {
-  purge: ['./src/**/*.{js,jsx,ts,tsx}'],
-  darkMode: false, // or 'media' or 'class'
-  mode: 'jit',
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     fontFamily: {
       sans: [
@@ -106,5 +102,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [typography, aspectRatio, lineClamp, forms],
+  plugins: [typography, lineClamp],
 };

@@ -43,7 +43,7 @@ init({
 });
 
 // Previews
-const AnimalPreview = ({ entry, widgetFor }) => {
+function AnimalPreview({ entry, widgetFor }) {
   const animalData = {
     title: entry.getIn(['data', 'title']),
     category: entry.getIn(['data', 'category']),
@@ -51,14 +51,14 @@ const AnimalPreview = ({ entry, widgetFor }) => {
   };
   return (
     <Container>
-      <div className="pb-32 pt-5">
+      <div className="pt-5 pb-32">
         <Animal preview animal={animalData} image={widgetFor('image')} body={widgetFor('body')} />
-        <hr className="bg-gray-600 my-10" />
+        <hr className="my-10 bg-gray-600" />
         <div className="max-w-xs">
           <AnimalCard preview animal={animalData} image={widgetFor('image')} />
         </div>
       </div>
     </Container>
   );
-};
+}
 CMS.registerPreviewTemplate('animal', AnimalPreview);

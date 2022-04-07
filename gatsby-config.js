@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https:/ahs-oberland.de',
+    siteUrl: 'https://ahs-oberland.de',
   },
   plugins: [
     'gatsby-plugin-eslint',
@@ -23,7 +23,7 @@ module.exports = {
       },
     },
     'gatsby-transformer-yaml',
-    'gatsby-plugin-postcss',
+    // 'gatsby-plugin-postcss',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -41,6 +41,6 @@ module.exports = {
         htmlFavicon: `${__dirname}/static/images/favicon.svg`,
       },
     },
-    'gatsby-plugin-sitemap',
+    // 'gatsby-plugin-sitemap',
   ],
 };

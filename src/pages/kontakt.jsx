@@ -34,17 +34,24 @@ function Page({ data }) {
               <div className="mt-9">
                 <div className="flex items-center">
                   <div className="flex-shrink-0">
-                    <PhoneIcon className="h-6 w-6 text-gray-800" aria-hidden="true" />
+                    <PhoneIcon className="w-6 h-6 text-gray-800" aria-hidden="true" />
                   </div>
                   <div className="ml-3 text-lg font-medium text-gray-900">
-                    <a href="tel:+49(0)36651 380 90" rel="noreferrer">
+                    {/* <a href="tel:+49(0)36651 380 90" rel="noreferrer">
                       +49(0)36651 380 90
+                    </a> */}
+                    <a
+                      href="tel:01515 6298670"
+                      rel="noreferrer"
+                      className="text-lg font-bold text-red-500"
+                    >
+                      01515 6298670
                     </a>
                   </div>
                 </div>
-                <div className="mt-6 flex items-center">
+                <div className="flex items-center mt-6">
                   <div className="flex-shrink-0">
-                    <MailIcon className="h-6 w-6 text-gray-800" aria-hidden="true" />
+                    <MailIcon className="w-6 h-6 text-gray-800" aria-hidden="true" />
                   </div>
                   <div className="ml-3 text-lg font-medium text-gray-900">
                     <a target="_blank" href="mailto:info@ahs-oberland.de" rel="noreferrer">
@@ -63,38 +70,38 @@ function Page({ data }) {
               <div className="max-w-lg lg:max-w-none">
                 <dl className="sm:divide-y sm:divide-gray-200">
                   <div className="py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                    <dt className="md:text-lg text-gray-900 font-medium">Montag</dt>
-                    <dd className="mt-1 md:text-lg text-gray-800 sm:mt-0 sm:col-span-2 sm:text-right">
+                    <dt className="font-medium text-gray-900 md:text-lg">Montag</dt>
+                    <dd className="mt-1 text-gray-800 md:text-lg sm:mt-0 sm:col-span-2 sm:text-right">
                       07:00 - 18:00 Uhr
                     </dd>
                   </div>
                   <div className="py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                    <dt className="md:text-lg text-gray-900 font-medium">Dienstag</dt>
-                    <dd className="mt-1 md:text-lg text-gray-800 sm:mt-0 sm:col-span-2 sm:text-right">
+                    <dt className="font-medium text-gray-900 md:text-lg">Dienstag</dt>
+                    <dd className="mt-1 text-gray-800 md:text-lg sm:mt-0 sm:col-span-2 sm:text-right">
                       07:00 - 18:00 Uhr
                     </dd>
                   </div>
                   <div className="py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                    <dt className="md:text-lg text-gray-900 font-medium">Mittwoch</dt>
-                    <dd className="mt-1 md:text-lg text-gray-800 sm:mt-0 sm:col-span-2 sm:text-right">
+                    <dt className="font-medium text-gray-900 md:text-lg">Mittwoch</dt>
+                    <dd className="mt-1 text-gray-800 md:text-lg sm:mt-0 sm:col-span-2 sm:text-right">
                       07:00 - 18:00 Uhr
                     </dd>
                   </div>
                   <div className="py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                    <dt className="md:text-lg text-gray-900 font-medium">Donnerstag</dt>
-                    <dd className="mt-1 md:text-lg text-gray-800 sm:mt-0 sm:col-span-2 sm:text-right">
+                    <dt className="font-medium text-gray-900 md:text-lg">Donnerstag</dt>
+                    <dd className="mt-1 text-gray-800 md:text-lg sm:mt-0 sm:col-span-2 sm:text-right">
                       07:00 - 18:00 Uhr
                     </dd>
                   </div>
                   <div className="py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                    <dt className="md:text-lg text-gray-900 font-medium">Freitag</dt>
-                    <dd className="mt-1 md:text-lg text-gray-800 sm:mt-0 sm:col-span-2 sm:text-right">
+                    <dt className="font-medium text-gray-900 md:text-lg">Freitag</dt>
+                    <dd className="mt-1 text-gray-800 md:text-lg sm:mt-0 sm:col-span-2 sm:text-right">
                       07:00 - 18:00 Uhr
                     </dd>
                   </div>
                   <div className="py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                    <dt className="md:text-lg text-gray-900 font-medium">Samstag</dt>
-                    <dd className="mt-1 md:text-lg text-gray-800 sm:mt-0 sm:col-span-2 sm:text-right">
+                    <dt className="font-medium text-gray-900 md:text-lg">Samstag</dt>
+                    <dd className="mt-1 text-gray-800 md:text-lg sm:mt-0 sm:col-span-2 sm:text-right">
                       07:00 - 12:00 Uhr
                     </dd>
                   </div>

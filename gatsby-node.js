@@ -64,7 +64,7 @@ exports.createPages = async ({ graphql, actions }) => {
   // });
 };
 
-exports.sourceNodes = ({ actions }) => {
+exports.createSchemaCustomization = ({ actions }) => {
   actions.createTypes(`
 
     # make the image of the meta block optional
