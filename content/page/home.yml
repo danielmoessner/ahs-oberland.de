@@ -6,8 +6,9 @@ meta:
   image: ""
 header:
   image: ../media/test.png
-  title: Vielen Dank für Ihren Besuch
-  text: "Für Fragen rundum Service und Inspektion, wählen Sie bitte die
+  title: Vielen Dank für Ihren Besuch...wir freuen uns Sie bei uns im Hause
+    begrüssen zu dürfen.
+  text: "Sie haben Fragen rundum Service und Inspektion, dann wählen Sie bitte die
     Servicerufnummer: +49(0)36651 38 09-0"
 jobs:
   title: Jobs - Wir suchen aktuell
