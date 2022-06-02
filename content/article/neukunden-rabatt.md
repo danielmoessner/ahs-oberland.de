@@ -9,5 +9,7 @@ description: |-
   Das Team der AHS Oberland GmbH freut sich auf Ihren Besuch. 
   Sie finden uns in der Richard- Köcher Strasse 33 in 07356 Bad Lobenstein.
 ---
+**Neukunden erhalten on Top 10% Rabatt!!**
+
 Das Team der AHS Oberland GmbH freut sich auf Ihren Besuch. 
 Sie finden uns in der Richard- Köcher Strasse 33 in 07356 Bad Lobenstein.
