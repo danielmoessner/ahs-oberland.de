@@ -15,8 +15,8 @@ columns:
     title: Kontakt
     content:
       - type: externalLink
-        text: 01515 6298670
-        url: tel:01515 6298670
+        text: +49(0)36651 38 09-0
+        url: tel:+49(0)36651 38 09-0
       - type: externalLink
         text: info@ahs-oberland.de
         url: mailto:info@ahs-oberland.de
