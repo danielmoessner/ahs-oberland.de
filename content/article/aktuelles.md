@@ -1,7 +1,7 @@
 ---
 collection: article
 title: ISO 9001 Volkswagen Audit
-slug: /aktuelles/
+slug: ISO 9001 Volkswagen Audit
 date: 2022-06-02T16:43:35.049Z
 frontpage: true
 image: ../media/d7091ca2-8e7a-4f99-8e06-72a54bb2ce0f_1_105_c.jpeg
