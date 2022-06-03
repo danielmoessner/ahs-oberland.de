@@ -25,27 +25,6 @@ description: >-
 
 
   Die Geschäftsleitung
-
-
-
-
-  Volkswagen Audit ISO 9001
-
-
-  Bad Lobenstein, 05/04/2022
-
-  Today we are very proud and could successfully complete the ISO 9001 certification of Volkswagen AG at AHS Oberland GmbH!
-
-  Numerous hours and days of intensive preparatory work are now over and led to a positive result without any noteworthy anomalies!
-
-  A big „THANK YOU“ goes to the staff of AHS Oberland GmbH!
-
-  We thank each and every employee personally!!!
-
-  Great team! Keep it up...
-
-
-  The Management Board
 ---
 ISO 9001 Volkswagen Audit
 
