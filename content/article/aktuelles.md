@@ -9,9 +9,6 @@ description: >-
   Bad Lobenstein, 04.05.2022
 
 
-  ISO 9001 Volkswagen Audit
-
-
   Heute konnten wir die ISO 9001 Zertifizierung der Volkswagen AG bei der AHS Oberland GmbH in Bad Lobenstein erfolgreich abschliessen!
 
   Zahlreiche Stunden und Tage der intensiven Vorarbeit sind nun vorbei und führten zu einem positiven Ergebnis ohne nennenswerte Auffälligkeiten!
